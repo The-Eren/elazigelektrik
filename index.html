@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Elazığ Acil Elektrik Arıza & Teknik Servis | 7/24 Hızlı Usta</title>
+  <meta name="description" content="Elazığ merkez ve tüm mahallelerinde 7/24 acil elektrik arıza, sigorta tamiri, montaj ve kablolama hizmeti. Hızlı intikal, dürüst fiyat, güvenilir işçilik.">
+  
+  <!-- Favicon / SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f59e0b'><path d='M13 2L3 14h7v8l10-12h-7z'/></svg>">
+
+  <!-- Erken Tema Kontrolü (Sayfa Yüklenirken Titremeyi Önler) -->
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+
+  <!-- Google Font: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN (Class-based dark mode) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              dark: '#080d1a',
+              card: '#0f172a',
+              cardHover: '#162038',
+              border: '#1e293b',
+              accent: '#f59e0b',
+              accentHover: '#d97706',
+              wa: '#22c55e',
+              waHover: '#16a34a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Safe-area padding for modern mobile devices (iOS notch/home indicator) */
+    .pb-safe {
+      padding-bottom: env(safe-area-inset-bottom, 1rem);
+    }
+    .tap-highlight-none {
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-brand-dark text-slate-800 dark:text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950 pb-28 md:pb-12 transition-colors duration-200">
+
+  <!-- ================= TOP NOTIFICATION / STATUS BAR ================= -->
+  <div class="bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800/80 px-4 py-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 transition-colors duration-200">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+        </span>
+        <span class="font-medium text-emerald-600 dark:text-emerald-400">Şu An Nöbetçi Servis Aktif</span>
+        <span class="hidden sm:inline text-slate-400 dark:text-slate-500">•</span>
+        <span class="hidden sm:inline text-slate-500 dark:text-slate-400">Elazığ Geneli 25-35 Dk Varış</span>
+      </div>
+      <div class="hidden sm:flex items-center gap-4 text-slate-500 dark:text-slate-400">
+        <span class="flex items-center gap-1.5">
+          <svg class="w-4 h-4 text-amber-500 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          Elazığ Merkez & Tüm Mahalleler
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= HEADER / NAVBAR ================= -->
+  <header class="sticky top-0 z-40 bg-white/90 dark:bg-brand-dark/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors duration-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      
+      <!-- Logo / Title -->
+      <a href="#" class="flex items-center gap-2.5 group">
+        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 dark:text-amber-400 group-hover:scale-105 transition-transform duration-200">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M13 2L3 14h7v8l10-12h-7z"/>
+          </svg>
+        </div>
+        <div>
+          <span class="text-base sm:text-lg font-bold tracking-tight text-slate-900 dark:text-white block leading-tight">
+            ELAZIĞ ELEKTRİK
+          </span>
+          <span class="text-[11px] font-semibold text-amber-600 dark:text-amber-400 tracking-wider uppercase block">
+            Acil Mobil Servis
+          </span>
+        </div>
+      </a>
+
+      <!-- Header Right (Theme Toggle + CTA Buttons) -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        
+        <!-- Siyah / Beyaz Tema Değiştirme Butonu -->
+        <button id="theme-toggle" 
+                type="button" 
+                title="Siyah / Beyaz Tema Değiştir"
+                aria-label="Siyah / Beyaz Tema Değiştir"
+                class="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800/80 border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 active:scale-95 transition-all">
+          
+          <!-- Güneş İkonu (Koyu/Siyah Modda Gözükür -> Tıklayınca Beyaza Geçer) -->
+          <svg id="theme-toggle-light-icon" class="w-4 h-4 text-amber-500 dark:text-amber-400 hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/>
+          </svg>
+
+          <!-- Ay İkonu (Açık/Beyaz Modda Gözükür -> Tıklayınca Siyaha Geçer) -->
+          <svg id="theme-toggle-dark-icon" class="w-4 h-4 text-slate-700 hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/>
+          </svg>
+
+          <span id="theme-toggle-text" class="hidden sm:inline">Beyaz Tema</span>
+        </button>
+
+        <!-- Desktop WhatsApp Button -->
+        <a href="https://wa.me/905354681762" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="hidden md:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-colors">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          WhatsApp İletişim
+        </a>
+
+        <!-- Desktop Call Button -->
+        <a href="tel:+905354681762" 
+           class="inline-flex items-center gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 transition-colors shadow-md shadow-amber-400/20">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1zM19 12h2c0-4.97-4.03-9-9-9v2c3.87 0 7 3.13 7 7zm-4 0h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3z"/></svg>
+          <span>0535 468 17 62</span>
+        </a>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative pt-8 pb-12 sm:pt-16 sm:pb-20 overflow-hidden">
+    <!-- Subtle Background Glows -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/10 dark:bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -top-20 right-0 w-80 h-80 bg-blue-500/10 dark:bg-blue-600/5 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative">
+      <div class="max-w-3xl">
+
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white dark:bg-slate-800/90 border border-slate-300 dark:border-slate-700/80 text-xs sm:text-sm font-semibold text-amber-600 dark:text-amber-400 mb-5 shadow-sm">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd"></path>
+          </svg>
+          <span>Gezici Mobil Ekip • Acil Müdahale Aracı</span>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15] mb-5">
+          Elazığ Acil Elektrik Arıza ve Teknik Servis
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-base sm:text-xl text-slate-600 dark:text-slate-300 font-normal leading-relaxed mb-8 max-w-2xl">
+          7/24 Kesintisiz Hizmet, Hızlı Müdahale ve Güvenilir İşçilik. Ev, ofis ve iş yerlerinizdeki tüm arızalara donanımlı servis aracımızla hemen geliyoruz.
+        </p>
+
+        <!-- CTA Buttons (Side by Side) -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 mb-10">
+          
+          <!-- Hemen Ara Button -->
+          <a href="tel:+905354681762" 
+             class="group relative inline-flex items-center justify-center gap-3 px-6 py-4 rounded-xl text-base sm:text-lg font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 active:scale-[0.98] transition-all shadow-xl shadow-amber-400/20 text-center">
+            <div class="w-8 h-8 rounded-lg bg-slate-950/10 flex items-center justify-center">
+              <svg class="w-5 h-5 text-slate-950 group-hover:rotate-12 transition-transform duration-200" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"/>
+              </svg>
+            </div>
+            <div class="text-left">
+              <span class="block text-xs uppercase tracking-wider font-extrabold text-slate-800 leading-none mb-0.5">7/24 Acil Ara</span>
+              <span class="text-base sm:text-lg font-extrabold leading-none">0535 468 17 62</span>
+            </div>
+          </a>
+
+          <!-- WhatsApp ile Yaz Button -->
+          <a href="https://wa.me/905354681762" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="group inline-flex items-center justify-center gap-3 px-6 py-4 rounded-xl text-base sm:text-lg font-semibold text-slate-800 dark:text-white bg-white dark:bg-slate-900 hover:bg-slate-100 dark:hover:bg-slate-800/90 border border-slate-300 dark:border-slate-700/80 active:scale-[0.98] transition-all text-center shadow-sm">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
+              <svg class="w-5 h-5 text-emerald-600 dark:text-emerald-400 group-hover:scale-110 transition-transform duration-200 fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+            </div>
+            <div class="text-left">
+              <span class="block text-xs uppercase tracking-wider font-semibold text-slate-500 dark:text-slate-400 leading-none mb-0.5">Konum & Fotoğraf Gönder</span>
+              <span class="text-base sm:text-lg font-bold leading-none text-emerald-600 dark:text-emerald-400">WhatsApp ile Yaz</span>
+            </div>
+          </a>
+
+        </div>
+
+        <!-- Quick Proof Badges -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-6 border-t border-slate-200 dark:border-slate-800/80">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 text-amber-500 dark:text-amber-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium">Hızlı Servis Garantisi</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 text-amber-500 dark:text-amber-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            </div>
+            <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium">Garantili İşçilik</span>
+          </div>
+          <div class="col-span-2 sm:col-span-1 flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center shrink-0 text-amber-500 dark:text-amber-400">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+            </div>
+            <span class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-medium">Dürüst ve Net Fiyat</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HİZMETLERİMİZ (SADE 4'LÜ KART YAPISI) ================= -->
+  <section class="py-12 sm:py-16 bg-slate-100/70 dark:bg-slate-950/60 border-y border-slate-200 dark:border-slate-800/80 relative transition-colors duration-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <!-- Section Heading -->
+      <div class="max-w-2xl mb-10">
+        <div class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-2">
+          <span>Uzmanlık Alanlarımız</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          Hizmetlerimiz
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
+          Gezici mobil servis aracımızda hazır bulunan yedek parça ve test cihazlarımızla arızayı yerinde ve hemen çözüyoruz.
+        </p>
+      </div>
+
+      <!-- 4 Clean Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        
+        <!-- Card 1 -->
+        <div class="bg-white dark:bg-brand-card border border-slate-200 dark:border-brand-border rounded-2xl p-6 hover:border-amber-500 dark:hover:border-amber-500/40 hover:shadow-lg dark:hover:bg-brand-cardHover transition-all group flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-500 dark:text-amber-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+              Sigorta Arızası ve Pano Bakımı
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+              Sürekli atan sigortalar, kaçak akım rölesi montajı, ana pano temizliği, yük dengelemesi ve eriyen klemens onarımı.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center text-xs font-semibold text-amber-600 dark:text-amber-400/90">
+            <span>Yerinde Hızlı Değişim</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white dark:bg-brand-card border border-slate-200 dark:border-brand-border rounded-2xl p-6 hover:border-amber-500 dark:hover:border-amber-500/40 hover:shadow-lg dark:hover:bg-brand-cardHover transition-all group flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-500 dark:text-amber-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+              Avize, Aplik ve Led Montajı
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+              Her türlü ağırlıkta tavan avizesi montajı, gizli tavan şerit LED döşeme, koridor aplikleri ve modern spot aydınlatma.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center text-xs font-semibold text-amber-600 dark:text-amber-400/90">
+            <span>Düzgün ve Sağlam Montaj</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white dark:bg-brand-card border border-slate-200 dark:border-brand-border rounded-2xl p-6 hover:border-amber-500 dark:hover:border-amber-500/40 hover:shadow-lg dark:hover:bg-brand-cardHover transition-all group flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-500 dark:text-amber-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+              Priz, Anahtar ve Kablo Tesisatı
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+              Ark yapan veya yanan prizlerin değişimi, fırın/klima için müstakil hat çekimi, anahtar yenileme ve sıva altı tesisat onarımı.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center text-xs font-semibold text-amber-600 dark:text-amber-400/90">
+            <span>TSE Standartlarında Malzeme</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white dark:bg-brand-card border border-slate-200 dark:border-brand-border rounded-2xl p-6 hover:border-amber-500 dark:hover:border-amber-500/40 hover:shadow-lg dark:hover:bg-brand-cardHover transition-all group flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-500 dark:text-amber-400 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+              İnternet / Ethernet Kablolama
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+              Bina giriş ankastre kutusundan daireye Cat6 kablo çekimi, kopuk sinyal onarımı, RJ45 jak çakımı ve modem hat testi.
+            </p>
+          </div>
+          <div class="pt-5 mt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center text-xs font-semibold text-amber-600 dark:text-amber-400/90">
+            <span>Kayıpsız Hızlı Bağlantı</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= NEDEN BİZ? (KISA VE ÖZ) ================= -->
+  <section class="py-12 sm:py-20 transition-colors duration-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="bg-gradient-to-b from-white to-slate-100 dark:from-slate-900 dark:to-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-12 shadow-sm">
+        <div class="max-w-2xl mb-10">
+          <div class="inline-flex items-center gap-1.5 text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-2">
+            <span>Esnaf Güvencesi</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            Neden Bizi Tercih Etmelisiniz?
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
+            Elektrik işi ihmale gelmez. Güvenlik, hız ve dürüstlük prensibiyle Elazığ'da yüzlerce eve ve iş yerine hizmet verdik.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          
+          <!-- Özellik 1 -->
+          <div class="flex flex-col gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-base">
+              01
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+              Elazığ Merkez ve Tüm Mahalleler
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+              Ataşehir, Çaydaçıra, Doğukent, Abdullahpaşa, Sürsürü ve diğer tüm semtlere donanımlı servis aracımızla en kısa sürede varıyoruz.
+            </p>
+          </div>
+
+          <!-- Özellik 2 -->
+          <div class="flex flex-col gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-base">
+              02
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+              Şeffaf ve Dürüst Fiyat Politikası
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+              İşe başlamadan önce arıza tespitini yapıp yapılacak işlemi ve masrafı açıkça belirtiriz. İşi bitirdikten sonra sürpriz ücretler çıkarılmaz.
+            </p>
+          </div>
+
+          <!-- Özellik 3 -->
+          <div class="flex flex-col gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-base">
+              03
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">
+              Temiz ve Garantili İşçilik
+            </h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+              Evinizin ve iş yerinizin düzenine saygı duyar, arkamızda çöp veya açık kablo bırakmayız. Yapılan iş ve kullanılan malzeme garantimiz altındadır.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Quick Call Banner inside Neden Biz -->
+        <div class="mt-10 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="text-center sm:text-left">
+            <p class="text-sm font-semibold text-slate-900 dark:text-white">Acil elektrik kesintisi veya arıza mı var?</p>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Beklemeden doğrudan ustayı arayarak durum hakkında bilgi alabilirsiniz.</p>
+          </div>
+          <a href="tel:+905354681762" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 transition-colors shrink-0 shadow-md shadow-amber-400/20">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"/></svg>
+            0535 468 17 62
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= HİZMET VERİLEN MAHALLELER BİLGİ ŞERİDİ ================= -->
+  <section class="py-8 bg-slate-100/90 dark:bg-slate-950/80 border-t border-slate-200 dark:border-slate-900 text-slate-600 dark:text-slate-400 text-xs transition-colors duration-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div class="flex items-center gap-2 text-slate-800 dark:text-slate-300 font-medium">
+          <svg class="w-4 h-4 text-amber-500 dark:text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          <span>Hizmet Bölgeleri:</span>
+        </div>
+        <p class="leading-relaxed text-slate-600 dark:text-slate-400">
+          Ataşehir • Çaydaçıra • Doğukent • Abdullahpaşa • Sürsürü • Cumhuriyet Mah. • Hilalkent • Olgunlar • İzzetpaşa • Rüstempaşa • Fevzi Çakmak • Sanayi ve tüm Elazığ geneli.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-8 bg-white dark:bg-brand-dark border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-500 transition-colors duration-200">
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="mb-2 font-medium text-slate-700 dark:text-slate-400">Elazığ Gezici Acil Elektrikçi ve Teknik Servis</p>
+      <p class="text-slate-500">Telefon: <a href="tel:+905354681762" class="text-amber-600 dark:text-amber-400 font-semibold hover:underline">0535 468 17 62</a> • 7 Gün 24 Saat Açık</p>
+      <p class="mt-4 text-[11px] text-slate-400 dark:text-slate-600">© 2026 Tüm Hakları Saklıdır. Güvenli ve belgeli elektrik ustalığı.</p>
+    </div>
+  </footer>
+
+  <!-- ================= MOBİL SABİT ALT BAR (STICKY FOOTER) ================= -->
+  <div class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-white/95 dark:bg-slate-950/95 backdrop-blur-lg border-t border-slate-200 dark:border-slate-800 shadow-[0_-8px_25px_rgba(0,0,0,0.08)] dark:shadow-[0_-8px_25px_rgba(0,0,0,0.5)] px-3 py-2.5 pb-safe tap-highlight-none transition-colors duration-200">
+    <div class="grid grid-cols-2 gap-2.5 max-w-md mx-auto">
+      
+      <!-- Hemen Ara Butonu -->
+      <a href="tel:+905354681762" 
+         class="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-amber-400 active:bg-amber-500 text-slate-950 font-extrabold text-sm shadow-md shadow-amber-400/25 transition-transform active:scale-[0.98]">
+        <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+          <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z"/>
+        </svg>
+        <span class="truncate">Hemen Ara</span>
+      </a>
+
+      <!-- WhatsApp Butonu -->
+      <a href="https://wa.me/905354681762" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-emerald-600 active:bg-emerald-700 text-white font-bold text-sm shadow-md shadow-emerald-600/25 transition-transform active:scale-[0.98]">
+        <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span class="truncate">WhatsApp</span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ================= TEMA DEĞİŞTİRME JAVASCRIPT ================= -->
+  <script>
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+    const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+    const themeToggleText = document.getElementById('theme-toggle-text');
+
+    function syncThemeUI() {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (isDark) {
+        themeToggleDarkIcon.classList.add('hidden');
+        themeToggleLightIcon.classList.remove('hidden');
+        if (themeToggleText) themeToggleText.textContent = 'Beyaz Tema';
+      } else {
+        themeToggleDarkIcon.classList.remove('hidden');
+        themeToggleLightIcon.classList.add('hidden');
+        if (themeToggleText) themeToggleText.textContent = 'Siyah Tema';
+      }
+    }
+
+    // İlk yüklemede buton ikon ve metnini senkronize et
+    syncThemeUI();
+
+    themeToggleBtn.addEventListener('click', function() {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+      syncThemeUI();
+    });
+  </script>
+
+</body>
+</html>
